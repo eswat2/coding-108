@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coding 108</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          rel="stylesheet"
+          type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/colors/3.0.0/css/colors.css"
+          rel="stylesheet"
+          type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"
+            type="text/javascript"></script>
+    <script src="https://use.fontawesome.com/85640850f4.js"
+            type="text/javascript"></script>
+    <link href="main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="wrapper" class="container mb-3">
+      <div id="app">
+        <button class="btn btn-default action" v-on:click="clear" v-bind:disabled="stop">Stop</button>
+        <button class="btn btn-primary action" v-on:click="run" v-bind:disabled="!stop">Run</button>
+        <h2 class="header">Traffic: 
+          <span class="badge badge-secondary">{{tick}}</span>
+        </h2>
+        <div v-for="state in states" class="light" v-bind:class="active(state)"></div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
