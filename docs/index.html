@@ -25,7 +25,7 @@
           <span class="badge badge-secondary">{{tick}}</span>
         </h2>
         <hr>
-        <button class="btn btn-warning action" v-on:click="step(1)" v-bind:disabled="!stop">One</button>
+        <button class="btn btn-warning action" v-on:click="step(1)" v-if="stop">One</button>
         <div v-for="state in states" class="light" v-bind:class="active(state)"></div>
       </div>
     </div>
