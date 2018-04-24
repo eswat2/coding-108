@@ -36,14 +36,16 @@ const app = new Vue({
       this.stop = false
       this.step()
     },
-    step: function() {
-      if (!this.stop) {
+    step: function(single) {
+      if (!this.stop || single) {
         this.tick += 1
         this.activeIndx -= 1
         if (this.activeIndx < 0) {
           this.activeIndx = 2
         }
-        this.next()
+        if (single != 1) {
+          this.next()
+        }
       }
     }
   }
