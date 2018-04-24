@@ -10,6 +10,8 @@
 //          yellow --> red
 //
 const DELAY = 2000
+const LIMIT = 30
+
 const app = new Vue({
   el: '#app',
   data: {
@@ -30,7 +32,11 @@ const app = new Vue({
     },
     next: function() {
       const vm = this
-      setTimeout(function() { vm.step() }, DELAY)
+      if (this.tick < LIMIT) {
+        setTimeout(function() { vm.step() }, DELAY)
+      } else {
+        this.clear()
+      }
     },
     run: function() {
       this.stop = false
